@@ -1,0 +1,108 @@
+[tool.setuptools]
+    packages = ["omlb"]
+    package-dir = {"" = "src"}
+
+[project]
+    name = "omlb"
+    version = "0.1.0"
+    description = "OTUS Machine Learning Basic. 2024. Pavel Bass"
+    authors = [
+        {name="Pavel Bass", email="basspv@sibur.ru"},
+    ]
+    readme = "README.md"
+    requires-python = ">= 3.12"
+	dependencies = [
+
+	]
+
+[project.scripts]
+	omlb = "omlb.cli:main"
+
+[project.optional-dependencies]
+    test = [
+        "pytest",
+		"pytest-asyncio",
+        "pytest-cov",
+        "pytest-mock",
+        "ruff",
+    ]
+
+[tool.pytest.ini_options]
+    addopts = "--cov-report term-missing --cov-report xml --cov src/"
+    testpaths = ["tests"]
+
+
+[tool.ruff]
+    line-length = 120
+
+[tool.ruff.lint]
+	select = [
+		"F",  # pyflakes
+		"E",  # pycodestyle errors
+		"W",  # pycodestyle warnings
+		"I001",  # isort
+		"D",  # pydocstyle
+		"U",  # pyupgrade
+		"N",  # pep8-naming
+		"S",  # bandit
+		"C",  # flake8-comprehensions
+		"FBT",  # flake8-boolean-trap
+		"B",  # flake8-bugbear
+		"A",  # flake8-builtins
+		# "I252",  # flake8-tidy-imports
+		"T",  # flake8-print
+		"Q",  # flake8-quotes
+		# "ANN",  # flake8-annotations
+		"YTT",  # flake8-2020
+		"C901",  # flake8-mccabe
+		"RUF",  # ruff-specific rules
+		"RUF100",  # meta-rules
+	]
+	ignore = [
+		"B027",  # "empty-method-without-abstract-decorator"
+		"D100",  # "missing-docstring-in-public-module"
+		"D104",  # "missing-docstring-in-public-package"
+		"D107",  # "missing-docstring-in-__init__"
+		"RUF002",  # "ambiguous-unicode-character-docstring"
+		"UP024",  # "os-error-alias"
+		"S603",  # "subprocess-without-shell-equals-true"
+	]
+	extend-ignore = [
+		# Google docstring
+		"D203",  # "one-blank-line-before-class"
+		"D204",  # "one-blank-line-after-class"
+		"D205",  # "1-blank-line-required-between-summary-line-and-description"
+		"D213",  # "multi-line-summary-second-line"
+		"D215",  # "section-underline-not-over-intended"
+		"D400",	 # "first-line"
+		"D404",  # "docstring-starts-with-this"
+		"D406",  # "newline-after-section-name"
+		"D407",  # "dashed-underline-after-section"
+		"D408",  # "dashed-underline-after-name"
+		"D409",  # "section-underline-matches-section-name"
+		"D413",  # "blank-line-after-last-section"
+
+		# Sibur MLFW code-style
+		"D415",  # "ends-in-punctuation"
+		"D212",  # "multi-line-summary-first-line"
+		"D213",  # "multi-line-summary-second-line"
+	]
+
+[tool.ruff.lint.flake8-quotes]
+	inline-quotes = "single"
+
+[tool.ruff.lint.mccabe]
+	max-complexity = 5
+
+[tool.ruff.format]
+	quote-style = "single"
+
+[tool.isort]
+	profile = "black"
+	multi_line_output = 3
+	force_grid_wrap = 2
+
+[tool.black]
+	line-length = 120
+	skip-string-normalization = true
+
