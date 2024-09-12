@@ -12,11 +12,11 @@
     readme = "README.md"
     requires-python = ">= 3.12"
 	dependencies = [
-
+		"click==8.1.7",
 	]
 
 [project.scripts]
-	omlb = "omlb.cli:main"
+	omlb = "omlb.cli.groups:root_group"
 
 [project.optional-dependencies]
     test = [
