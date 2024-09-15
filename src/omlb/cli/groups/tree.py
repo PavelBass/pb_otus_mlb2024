@@ -4,11 +4,11 @@ import click
 from omlb.cli.groups.homework import HomeworkTasksGroup
 
 
-@click.group()
+@click.group(help='Pavel Bass. OTUS Machine Learning Basic 2024')
 def root_group():
     """Корневая группа CLI приложения"""
 
-@root_group.group(name='hw')
+@root_group.group(name='hw', help='Домашние задания')
 def homeworks_group():
     """Группа домашних заданий"""
 
