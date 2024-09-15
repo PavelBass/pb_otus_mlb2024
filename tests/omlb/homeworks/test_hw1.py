@@ -10,13 +10,13 @@ from omlb.homeworks.hw1 import (
 
 
 @pytest.mark.parametrize(
-    'value, expected',(
+    'value, output',(
 
         ('23456', '25436'),
         ('30789', '38709'),
     )
 )
-def test_task1__print_expected(value, expected, mocker):
+def test_task1__print_expected(value, output, mocker):
     # arrange
     mocked_input = mocker.patch('omlb.homeworks.hw1.input', return_value=value)
     mocked_print = mocker.patch('omlb.homeworks.hw1.print')
@@ -25,7 +25,7 @@ def test_task1__print_expected(value, expected, mocker):
     task1()
 
     # assert
-    mocked_print.assert_called_once_with(expected)
+    mocked_print.assert_called_once_with(output)
 
 
 @pytest.mark.parametrize(
