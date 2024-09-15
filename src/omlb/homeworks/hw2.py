@@ -1,4 +1,4 @@
-"""Домашнее задание к уроку 3 "Базовые типы данных"."""
+"""Домашнее задание к уроку 4 "Управляющие конструкции"."""
 import string
 from collections import defaultdict
 from typing import Literal
