@@ -89,6 +89,7 @@
 
 		# Other
 		"T201",  # "print"
+		"FBT003",  # "boolean-positional-value-in-call"
 	]
 
 [tool.ruff.lint.flake8-quotes]

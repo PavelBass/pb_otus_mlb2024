@@ -18,3 +18,5 @@ homeworks_group.add_command(HomeworkTasksGroup(name='1'))
 # Группа домашнего задания 2
 homeworks_group.add_command(HomeworkTasksGroup(name='2'))
 
+# Группа домашнего задания 3
+homeworks_group.add_command(HomeworkTasksGroup(name='3'))
