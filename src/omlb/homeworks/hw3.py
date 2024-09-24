@@ -1,3 +1,4 @@
+import math
 from collections import namedtuple
 from collections.abc import Generator
 from datetime import datetime
@@ -85,7 +86,11 @@ def task3():
         23 -> True
     """
     value = int(input('Введите число > '))
-    print(bool(value % 2))
+    for number in range(2, int(math.sqrt(value)) + 1):
+        if value % number == 0:
+            print(False)
+            return
+    print(True)
 
 
 def task4():
